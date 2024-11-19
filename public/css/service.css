@@ -1,0 +1,242 @@
+*{
+  cursor: none;
+}
+
+.ball {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.1s ease;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  background-color: white;
+}
+
+/* Add this to ensure the ball is hidden when it's needed */
+.ball-hidden {
+  z-index: -10;
+  background-color: transparent;
+}
+
+
+.container-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: clamp(2rem, 2.8vw, 5rem);
+  font-family: Raleway;
+  font-weight: bold;
+}
+
+.typewriter {
+	width: 21.5ch;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 4px solid #212121;
+	animation: cursor 1s step-start infinite, 
+    text 5s steps(18) alternate infinite;
+}
+
+@keyframes cursor {
+	0%, 100% { 
+    border-color: #212121; 
+  }
+}
+
+@keyframes text {
+	0% { 
+    width: 0; 
+  }
+	100% { 
+    width: 21.5ch; 
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.vorn-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffff;
+}
+
+
+
+.vorn-content {
+  opacity: 0;
+  transition: all 0.5s ease;
+  padding: 20px;
+  font-size: 24px;
+  color: black;
+  height: 100%;
+  width: 100%;
+} 
+/* Animation for sliding in and out from right */
+.vorn-right-slide {
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+}
+
+.vorn-right-slide.vorn-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.vorn-right-slide.vorn-inactive {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+/* Animation for sliding in and out from left */
+.vorn-left-slide {
+  transform: translateX(-100%);
+}
+
+.vorn-left-slide.vorn-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.vorn-left-slide.vorn-inactive {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.imgfit{
+  object-fit: contain;
+  height: 100%;
+  width: 100%;;
+}
+
+.random-text-title{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.random-text-title > p{
+  text-align: center;
+}
+
+.random-text-title > h1{
+  font-size: 50px;
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
+
+}
+
+.section1{
+  height: 100%;
+  width: 100%;
+}
+
+.vorn2{
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-inner img {
+  max-height: 500px; /* Adjust the height as per your requirement */
+  object-fit: cover; 
+}
+
+.carousel{
+  width: 1000px;
+  margin: auto;
+}
+
+
+@media only screen and (max-width: 780px) {
+  html {
+      cursor: default; /* Show the cursor again for small screens */
+  }
+
+  .ball {
+      display: none; /* Hide the ball */
+  }
+}
+
+#btn-mv:hover{
+  cursor: none;
+}
+
+.nav-link{    
+  font-family: "EB Garamond", serif;
+  font-size: 1.5rem;
+  color: #1e1e1e !important;
+  transition: all 0.5s ease; /* Smooth transition for any change */
+  cursor: none;
+}
+
+.nav-link:focus {
+  color: #D8D2C2;
+  font-size: 1.5rem;
+  cursor: none;
+}
+
+.nav-link:hover {
+  color: #737068 !important;
+  font-size: 1.5rem;
+  cursor: none;
+}
+
+.nav{
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.75) !important;
+  background-color: white!important;
+  z-index: 1; /* Higher z-index to bring this div forward */
+  position: fixed;
+  
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* High z-index to ensure it stays on top */
+  height: 50px; 
+  cursor: none;
+}
+
+.navbar-hidden {
+  transition: top 0.3s ease-in-out;
+  top: -60px; /* Adjust this based on the height of your navbar */
+  width: 100%;
+}
+
+.navbar-visible {
+  transition: top 0.3s ease-in-out;
+  top: 0;
+  width: 100%;
+  cursor: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-link:focus {
+      cursor: default;
+  }
+  
+  .nav-link:hover {
+      cursor: pointer;
+  }
+  
+  .nav{
+      cursor: default;
+  }
+}
+

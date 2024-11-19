@@ -1,0 +1,259 @@
+html {
+    cursor: none;
+}
+
+.ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.1s ease;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    background-color: white;
+  }
+  
+body {
+    background-color: #1e1e1e;
+    color: azure;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    line-height: 1.1666666667;
+    letter-spacing: -.044em;
+}
+
+.container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+}
+
+.display-1 {
+    text-align: center;
+    color: #fff;
+    font-size: 180px;
+}
+
+.box {
+    margin: 0 auto;
+    margin-top: 110px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.fadeInUp {
+    animation: fadeInUp 0.5s ease-out backwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translate(0px, 100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0px, 0);
+        opacity: 1;
+    }
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 45vw;
+    overflow: hidden;  /* Ensures the image doesn’t exceed the wrapper’s bounds */
+    display: inline-block;
+}
+
+.productImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 2s ease;
+}
+
+.productImg:hover {
+    transform: scale(1.1);
+}
+
+.imagetext {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.subimagetext {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+}
+
+.project-teaser-title {
+    margin-top: 0.4em;
+    margin-bottom: 1.1em;
+    font-size: 1.875rem;
+}
+
+.text1 {
+    flex: 1 1 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: .35rem;
+    padding-bottom: .35rem;
+    border-top: 1px solid #6C6C6C;
+    border-bottom: 1px solid #6C6C6C;
+    height: 150px;
+    max-width: 100%;
+}
+
+
+/* Cursor settings and ball adjustments for mobile devices */
+@media only screen and (max-width: 780px) {
+    html {
+        cursor: default; /* Show the cursor again for small screens */
+    }
+
+    .ball {
+        display: none; /* Hide the ball */
+    }
+}
+
+/* For tablets (landscape and portrait orientation) */
+@media only screen and (max-width: 1024px) {
+    .display-1 {
+        font-size: 100px;
+    }
+
+    .productImg {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .imagetext {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .text1 {
+        height: auto;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    .image-wrapper {
+        width: 100%;
+        padding-top: 100%;
+        position: relative;
+        
+    }
+    
+    .image-wrapper > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* For mobile devices (portrait orientation) */
+@media only screen and (max-width: 768px) {
+    .display-1 {
+        font-size: 60px;
+    }
+
+    .productImg {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+
+    .imagetext {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .image-wrapper {
+        width: 100%;
+        padding-top: 100%;
+    }
+
+    .project-teaser-title {
+        font-size: 1.25rem;
+    }
+
+    .text1 {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        font-size: 0.875rem;
+        height: auto;
+    }
+    
+
+    .ball {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+/* For mobile devices (small screen - less than 480px) */
+@media only screen and (max-width: 480px) {
+    .display-1 {
+        font-size: 40px;
+    }
+
+    .productImg {
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+    }
+
+    .project-teaser-title {
+        font-size: 1rem;
+    }
+
+    .text1 {
+        font-size: 0.75rem;
+    }
+
+    .image-wrapper {
+        width: 100%;
+        padding-top: 100%;
+    }
+}
+
+
+
+/* Flash animation */
+@keyframes flashOnLoad {
+    0% {
+        opacity: 0; /* Start with the image invisible */
+        background-color: white;
+        
+    }
+    50% {
+        opacity: 0.5; /* Flash to fully visible */
+        background-color: white;
+    }
+    100% {
+        opacity: 1; /* Fade out again */
+        background-color: transparent;
+    }
+}
+
+/* Apply flash animation to images */
+.image-wrapper img {
+    animation: flashOnLoad 1s ease-in-out; /* 1 second flash effect */
+    animation-iteration-count: 1; /* Repeat the flash 3 times */
+    opacity: 1; /* Set the opacity back to visible at the end */
+    background-color: white;
+}

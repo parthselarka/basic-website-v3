@@ -1,0 +1,59 @@
+.nav-link{    
+    font-family: "EB Garamond", serif;
+    font-size: 1.5rem;
+    color: #fff;
+    transition: all 0.5s ease; /* Smooth transition for any change */
+    cursor: none;
+}
+
+.nav-link:focus {
+    color: #D8D2C2;
+    font-size: 1.5rem;
+    cursor: none;
+}
+
+.nav-link:hover {
+    color: #D8D2C2;
+    font-size: 1.5rem;
+    cursor: none;
+}
+
+.nav{
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.75);
+    z-index: 1; /* Higher z-index to bring this div forward */
+    position: fixed;
+    background-color: #1e1e1e;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* High z-index to ensure it stays on top */
+    height: 50px; 
+    cursor: none;
+}
+
+.navbar-hidden {
+    transition: top 0.3s ease-in-out;
+    top: -60px; /* Adjust this based on the height of your navbar */
+    width: 100%;
+}
+
+.navbar-visible {
+    transition: top 0.3s ease-in-out;
+    top: 0;
+    width: 100%;
+    cursor: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-link:focus {
+        cursor: default;
+    }
+    
+    .nav-link:hover {
+        cursor: pointer;
+    }
+    
+    .nav{
+        cursor: default;
+    }
+}
+

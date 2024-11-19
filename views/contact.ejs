@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>basic project</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/navcolor.css">
+</head>
+<body>
+    <div class="ball"></div>  
+    <%- include('partials/header.ejs') %>
+     
+    <div class="darksoul-contact" id="contact-div">
+        
+        <form action="" class="darksoul-form">
+            <h1 id="contact">Contact</h1>
+                <div class="darksoul-input">
+                    <label id="l-name" class="d-label">Name</label>
+                    <input type="text" name="name" id="name" value="" onfocus="labelmove('name')">
+                </div>
+                <div class="darksoul-input">
+                    <label id="l-email" class="d-label">Email Address</label>
+                    <input type="email" name="email" id="email" onfocus="labelmove('email')">
+                </div>
+                <div class="darksoul-input">
+                    <label id="l-sub" class="d-label">Subject</label>
+                    <input type="text" name="subject" id="subject" onfocus="labelmove('subject')">
+                </div>
+
+                <div class="darksoul-tarea">
+                    <label id="l-tarea" class="d-tarea-label">Message</label>
+                    <textarea name="message" id="message" onfocus="labelmove('message')"></textarea>
+                </div>
+
+                <input type="submit" value="Send Message">
+
+        </form>
+    </div>
+
+    
+    <script src="/js/contact.js"></script>
+</body>
+</html>
